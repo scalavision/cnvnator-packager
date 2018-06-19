@@ -1,6 +1,8 @@
 # Following are changed from the original repository
 
 * Removed sudo, as this is going to be used in Singularity container
+* Updated CNVnator to 0.3.3
+* Updated Samtools to 1.8
 
 # `CNVnator` packager
 
