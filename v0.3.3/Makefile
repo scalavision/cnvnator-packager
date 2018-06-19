@@ -101,28 +101,28 @@ $(ROOT_TGZ_PATH): | $(BASE_SRC_DIR)
 
 $(BASE_INSTALL_DIR):
 	if [ ! -e $(BASE_INSTALL_DIR) ]; then \
-		sudo mkdir -p $(BASE_INSTALL_DIR); \
-		sudo chown -R $(USER):$(USER) $(BASE_DIR); \
+		 mkdir -p $(BASE_INSTALL_DIR); \
+		 chown -R $(USER):$(USER) $(BASE_DIR); \
 	fi;
 
 $(BASE_SRC_DIR):
 	if [ ! -e $(BASE_SRC_DIR) ]; then \
-		sudo mkdir -p $(BASE_SRC_DIR); \
-		sudo chown -R $(USER):$(USER) $(BASE_DIR); \
+		 mkdir -p $(BASE_SRC_DIR); \
+		 chown -R $(USER):$(USER) $(BASE_DIR); \
 	fi;
 
 dependencies: initialize-repo
-	sudo apt-get install -y libgomp1
-	sudo apt-get install -y libstdc++6
-	sudo apt-get install -y libgcc1
-	sudo apt-get install -y libxpm4 libxpm-dev
-	sudo apt-get install -y zlib1g zlib1g-dev
-	sudo apt-get install -y git
-	sudo apt-get install -y libncurses5-dev
+	 apt-get install -y libgomp1
+	 apt-get install -y libstdc++6
+	 apt-get install -y libgcc1
+	 apt-get install -y libxpm4 libxpm-dev
+	 apt-get install -y zlib1g zlib1g-dev
+	 apt-get install -y git
+	 apt-get install -y libncurses5-dev
 	
 initialize-repo:
-	sudo apt-get update
-	sudo apt-get install -y build-essential
+	 apt-get update
+	 apt-get install -y build-essential
 
 clean:
 	rm -rf $(BASE_DIR)
