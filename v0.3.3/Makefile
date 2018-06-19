@@ -18,14 +18,14 @@ YEPPP_SRC_DIR     := $(BASE_SRC_DIR)/yeppp-1.0.0
 CNVNATOR_SRC_DIR  := $(BASE_SRC_DIR)/CNVnator
 CNVNATOR_TAG      := v$(CNVNATOR_VERSION)
 
-SAMTOOLS          := 1.8
+SAMTOOLS_VERSION  := 1.8
 SAMTOOLS_TGZ      := samtools-1.8.tar.bz2
 SAMTOOLS_TGZ_PATH := $(CNVNATOR_SRC_DIR)/$(SAMTOOLS_TGZ)
 SAMTOOLS_SRC_DIR  := $(CNVNATOR_SRC_DIR)/samtools
 
 ROOT_SITE_URL     := https://root.cern.ch/download/$(ROOT_TGZ)
 YEPPP_SITE_URL    := https://bitbucket.org/MDukhan/yeppp/downloads/$(YEPPP_TGZ)
-SAMTOOLS_SITE_URL := https://github.com/samtools/samtools/releases/download/${SAMTOOLS}/$(SAMTOOLS_TGZ)
+SAMTOOLS_SITE_URL := https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/$(SAMTOOLS_TGZ)
 
 ROOT_EXE           := $(BASE_INSTALL_DIR)/bin/root.exe
 YEPPP_LIB          := $(BASE_INSTALL_DIR)/lib/libyeppp.so 
@@ -60,7 +60,7 @@ $(SAMTOOLS_LIB): | $(SAMTOOLS_SRC_DIR)
 $(SAMTOOLS_SRC_DIR): | $(SAMTOOLS_TGZ_PATH) $(CNVNATOR_SRC_DIR) 
 	cd $(CNVNATOR_SRC_DIR) && \
 		tar jxvf $(SAMTOOLS_TGZ) && \
-		mv samtools-1.3 samtools
+		mv samtools-${SAMTOOLS_VERSION} samtools
 
 $(SAMTOOLS_TGZ_PATH): | $(CNVNATOR_SRC_DIR)
 	cd $(CNVNATOR_SRC_DIR) && \
